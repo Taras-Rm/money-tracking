@@ -3,10 +3,7 @@ import { Layout, Menu } from 'antd';
 import {
   DashboardOutlined,
   TransactionOutlined,
-  AccountBookOutlined,
-  PieChartOutlined,
   SettingOutlined,
-  BarChartOutlined,
 } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -32,21 +29,6 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed = false }) => {
       label: 'Transactions',
     },
     {
-      key: '/accounts',
-      icon: <AccountBookOutlined />,
-      label: 'Accounts',
-    },
-    {
-      key: '/categories',
-      icon: <PieChartOutlined />,
-      label: 'Categories',
-    },
-    {
-      key: '/reports',
-      icon: <BarChartOutlined />,
-      label: 'Reports',
-    },
-    {
       key: '/settings',
       icon: <SettingOutlined />,
       label: 'Settings',
@@ -58,9 +40,9 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed = false }) => {
   };
 
   return (
-    <Sider 
-      trigger={null} 
-      collapsible 
+    <Sider
+      trigger={null}
+      collapsible
       collapsed={collapsed}
       style={{
         background: '#fff',

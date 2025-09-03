@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Layout, Button } from 'antd';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import React from 'react';
+import { Layout } from 'antd';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -11,15 +10,9 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
-
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sidebar collapsed={collapsed} />
+      <Sidebar collapsed={false} />
       <Layout>
         <Header />
         <Content
