@@ -1,10 +1,9 @@
+import PageLayout from "../components/layout/PageLayout"
 
 
 const TransactionsPage = () => {
     return (
-        <div>
-            <h1>Transactions</h1>
-
+        <PageLayout title="Transactions">
             <form onSubmit={() => { }} style={{
                 padding: '20px',
                 background: '#f0f2f5',
@@ -53,7 +52,8 @@ const TransactionsPage = () => {
                 <h3>All Transactions</h3>
                 <p>All transactions coming soon...</p>
             </div>
-        </div>
+        </PageLayout>
+
     )
 }
 

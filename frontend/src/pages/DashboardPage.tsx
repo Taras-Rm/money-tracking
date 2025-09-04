@@ -1,4 +1,5 @@
-import { List } from 'antd'
+import TransactionsTypeList from '../components/features/dashboard/TransactionsTypeList';
+import PageLayout from '../components/layout/PageLayout';
 
 const data = [
     'Racing car sprays burning fuel into crowd.',
@@ -10,43 +11,20 @@ const data = [
 
 const DashboardPage = () => {
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <PageLayout title='Dashboard'>
             <div style={{ display: 'flex', gap: '20px' }}>
                 <div style={{ width: "100%" }}>
-                    <List
-                        size="small"
-                        header={<div style={{ fontWeight: 'bold' }}>Income</div>}
-                        footer={<div>Footer</div>}
-                        bordered
-                        dataSource={data}
-                        renderItem={(item) => <List.Item style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}><div>{item}</div>100<div></div></List.Item>}
-                    />
+                    <TransactionsTypeList data={data} title='Income' />
+                </div>
+                <div style={{ width: "100%" }}>
+                    <TransactionsTypeList data={data} title='Monthly Expenses' />
                 </div>
 
                 <div style={{ width: "100%" }}>
-                    <List
-                        size="small"
-                        header={<div style={{ fontWeight: 'bold' }}>Monthly Expenses</div>}
-                        footer={<div>Footer</div>}
-                        bordered
-                        dataSource={data}
-                        renderItem={(item) => <List.Item style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}><div>{item}</div>100<div></div></List.Item>}
-                    />
-                </div>
-
-                <div style={{ width: "100%" }}>
-                    <List
-                        size="small"
-                        header={<div style={{ fontWeight: 'bold' }}>Expenses</div>}
-                        footer={<div>Footer</div>}
-                        bordered
-                        dataSource={data}
-                        renderItem={(item) => <List.Item style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}><div>{item}</div>100<div></div></List.Item>}
-                    />
+                    <TransactionsTypeList data={data} title='Expenses' />
                 </div>
             </div>
-        </div >
+        </PageLayout>
     )
 }
 
